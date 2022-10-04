@@ -1,28 +1,29 @@
 /*
 ==================================================================================
 
-                    Calculadora de códigos de cores para resistores
+                    Calculadora de cï¿½digos de cores para resistores
 
 ==================================================================================
 Empresa: Espartana
 Equipe de Programadores:
+               Fabricio Razera;
                Gabriel de Oliveira Buchara;
                Gabriel Toshio;
                Nome do terceiro
                Rafael Vieira Rodrigues.
-Curso: Tecnologia em Análise e Desenvolvimento de Sistemas
-Data de início do projeto: 03/10/2022
+Curso: Tecnologia em Anï¿½lise e Desenvolvimento de Sistemas
+Data de inï¿½cio do projeto: 03/10/2022
 ----------------------------------------------------------------------------------
-Descrição do Programa:
-		O programa têm o objetivo de ajudar na realização do cálculo
-        da resistência elétrica, por meio do uso de código de cores de 4 faixas.
-        O usuário deverá informar as cores das 4 faixas do resistor. Com isso, o
-        programa irá informar qual será o valor da resistência e da sua tolerância,
+Descriï¿½ï¿½o do Programa:
+		O programa tï¿½m o objetivo de ajudar na realizaï¿½ï¿½o do cï¿½lculo
+        da resistï¿½ncia elï¿½trica, por meio do uso de cï¿½digo de cores de 4 faixas.
+        O usuï¿½rio deverï¿½ informar as cores das 4 faixas do resistor. Com isso, o
+        programa irï¿½ informar qual serï¿½ o valor da resistï¿½ncia e da sua tolerï¿½ncia,
         todos com a unidade de medida em Ohms.
 
-Versão do programa: 1.0
-Melhorias da versão: Primeira versão.
-Data de lançamento da versão: 11/10/2022
+Versï¿½o do programa: 1.0
+Melhorias da versï¿½o: Primeira versï¿½o.
+Data de lanï¿½amento da versï¿½o: 11/10/2022
 ==================================================================================
 */
 
@@ -30,12 +31,13 @@ Data de lançamento da versão: 11/10/2022
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h> //biblioteca caracteres especiais
+#include <math.h>
 
 int main()
 {
     //Setando em pt-BR
     setlocale (LC_ALL, "Portuguese");
-    //Declaração de variáveis
+    //Declaraï¿½ï¿½o de variï¿½veis
     float fx1,fx2,fx3,fx4,calc,calcMaior,calcMenor,tolerancia;
     //Mostrar os valores das faixas
     printf ("------------- Valores das Cores ---------------\n");
@@ -53,30 +55,30 @@ int main()
     printf ("Prateado:      11     10^-2    +-10%%      \n");
     printf ("-----------------------------------------------\n");
     //Receber valores das faixas
-    printf("Digite o código da primeira faixa de cor: ");
+    printf("Digite o cï¿½digo da primeira faixa de cor: ");
     scanf("%f", &fx1);
-    printf("Digite o código da segunda  faixa de cor: ");
+    printf("Digite o cï¿½digo da segunda  faixa de cor: ");
     scanf("%f", &fx2);
-    printf("Digite o código da terceira faixa multiplicadora de cor: ");
+    printf("Digite o cï¿½digo da terceira faixa multiplicadora de cor: ");
     scanf("%f", &fx3);
-    printf("Digite o código da quarta faixa de cor (tolerância): ");
+    printf("Digite o cï¿½digo da quarta faixa de cor (tolerï¿½ncia): ");
     scanf("%f", &fx4);
-    //Condição while para receber o valor correto da quarta faixa de cor
+    //Condiï¿½ï¿½o while para receber o valor correto da quarta faixa de cor
     while (fx4 != 0 && fx4 != 1 && fx4 != 2 && fx4 != 3 && fx4 != 4 && fx4 != 10 && fx4 != 11){
-        printf("Digite o código da quarta faixa de cor (tolerância): ");
+        printf("Digite o cï¿½digo da quarta faixa de cor (tolerï¿½ncia): ");
         scanf("%f", &fx4);
     }
-    //Condições para o fx3 (Dourado e Prata)
+    //Condiï¿½ï¿½es para o fx3 (Dourado e Prata)
     if (fx3 == 10){
         fx3 = -1;
     }
     else if (fx3 == 11){
         fx3 = -2 ;
     }
-    //Cálculo da resistência
-    calc = ((fx1 * 10) + fx2) * (pow(10, fx3)); //função pow() serve como um potencia. Ex: pow(10,fx3) = 10^fx3.
+    //Cï¿½lculo da resistï¿½ncia
+    calc = ((fx1 * 10) + fx2) * (pow(10, fx3)); //funï¿½ï¿½o pow() serve como um potencia. Ex: pow(10,fx3) = 10^fx3.
 
-    //Condições para o fx4 (Dourado, Prateado e Preto)
+    //Condiï¿½ï¿½es para o fx4 (Dourado, Prateado e Preto)
     if (fx4 == 10){
         fx4 = 5;
     }
@@ -88,15 +90,15 @@ int main()
     }
 
     //Mostrar valores
-    printf("\nO valor da resistência e da sua tolerância, respectivamente: %.2f ohms +/- %.2f%%. \n",calc,fx4);
+    printf("\nO valor da resistï¿½ncia e da sua tolerï¿½ncia, respectivamente: %.2f ohms +/- %.2f%%. \n",calc,fx4);
 
 
-    //Cálculo do valor da resistÊncia, tanto para menos quanto para mais (PROTÓTIPO, EM TESTES)
+    //Cï¿½lculo do valor da resistï¿½ncia, tanto para menos quanto para mais (PROTï¿½TIPO, EM TESTES)
  //   tolerancia = (calc * (fx4/100));
   //  calcMenor = (calc  - tolerancia);
   //  calcMaior = (calc + tolerancia);
     //
-  //  printf("A sua tolerância será entre: %.2f e %.2f ohms. ",calcMenor,calcMaior);
+  //  printf("A sua tolerï¿½ncia serï¿½ entre: %.2f e %.2f ohms. ",calcMenor,calcMaior);
 
 
 
