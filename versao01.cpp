@@ -1,9 +1,13 @@
-/*Empresa: Espartana
+/*/*
+==================================================================================
+                    Calculadora de Códigos de Cores para Resistores
+==================================================================================
+Empresa: Espartana
 Equipe de Programadores:
-               Fabricio Razera;
+               Fabrício Razera;
                Gabriel de Oliveira Buchara;
                Gabriel Toshio;
-               Nome do quarto;
+               Pedro Gabriel de Andrade;
                Rafael Vieira Rodrigues.
 Curso: Tecnologia em Análise e Desenvolvimento de Sistemas
 Data de início do projeto: 03/10/2022
@@ -24,6 +28,7 @@ Data de lançamento da versão: 11/10/2022
 #include <stdlib.h>
 #include <locale.h> //biblioteca caracteres especiais
 #include <math.h>
+
 
 int main()
 {
@@ -85,6 +90,13 @@ int main()
     }
     //Mostrar valores
     printf("\nO valor da resistência e da sua tolerância, respectivamente: %.2f ohms +/- %.2f%%. \n",calc,fx4);
+   //Convertendo o valor para a realização do cálculo
+    tolerancia = (calc * (fx4/100));
+    calcMenor = (calc  - tolerancia);
+    calcMaior = (calc + tolerancia);
+    //Mostrando a taxa do valor da resistência
+    printf("A sua tolerância será entre: %.2f e %.2f ohms. ",calcMenor,calcMaior);
+    printf("A sua tolerância será entre: %.2f e %.2f ohms. \n",calcMenor,calcMaior);
 
     return 0;
 }
