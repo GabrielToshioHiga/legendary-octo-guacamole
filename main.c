@@ -77,7 +77,7 @@ void converteLowerCase(char str[]) {
     */
     int i;
     
-    for ( i = 0; i < sizeof(str) / sizeof(str[0]); i++) {
+    for ( i = 0; i < sizeof(*str) / sizeof(str[0]); i++) {
        str[i] = tolower(str[i]);
     }
 }
@@ -94,7 +94,7 @@ float pegaMult(char multiplicador[]){
 			
 			return 10;
 		}
-		else if (!strcmp(multiplicador, "vermelho")){
+		else if (!strcmp(multiplicador, "vermelho") || !strcmp(multiplicador, "vermelha")){
 			
 			return 100;
 		}
