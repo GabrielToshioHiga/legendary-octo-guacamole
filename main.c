@@ -132,7 +132,7 @@ float pegaTolerancia(char tolerancia[]){
 
 	float tole;
 		
-	if (!strcmp(tolerancia, "preto") || !strcmp(tolerancia, "preto")){
+	if (!strcmp(tolerancia, "preto") || !strcmp(tolerancia, "preta")){
 	
 		tole = 0.2;	
 	}
@@ -178,7 +178,7 @@ float pegaTolerancia(char tolerancia[]){
 	
 
 
-float calcVal(){
+void calcVal(){
     float fx3,fx4,calc,tolerancia,calcMenor,calcMaior;
     int fx1, fx2;
 
@@ -253,18 +253,20 @@ float calcVal(){
 	//Cálculo da resistência
     calc = ((fx1 * 10) + fx2) * (fx3);
 
-//Mostrar valores
-    printf("\n\nO valor da resistência e da sua tolerância, respectivamente: %.2f ohms +/- %.2f%%. \n",calc,fx4 * 100);
-//Convertendo o valor para a realizaçãoo do cálculo
+    //Mostrar valores
+    printf("\n\nO valor da resistência e da sua tolerância, respectivamente: %.2f ohms +/- %.2f%%. \n", calc, fx4 * 100);
+    
+    //Convertendo o valor para a realizaçãoo do cálculo
     tolerancia = (calc * (fx4));
     calcMenor = (calc  - tolerancia);
     calcMaior = (calc + tolerancia);
-//Mostrando a taxa do valor da resistência
-    printf("A sua tolerância sería entre: %.2f e %.2f ohms. \n",calcMenor,calcMaior);
+    
+    //Mostrando a taxa do valor da resistência
+    printf("A tolerância está entre: %.2f e %.2f ohms. \n",calcMenor,calcMaior);
 
     printf("\nObrigado por utilizar nosso software! A Equipe Espartana agradece! \n");
 
-    return 0;
+    return;
 }
 
 
