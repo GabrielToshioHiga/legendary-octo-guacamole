@@ -22,6 +22,7 @@ Descrição do Programa:
 Versão do programa: 1.0
 Melhorias da versão: Primeira versão.
 Data de lançamento da versão: 11/10/2022
+Página do projeto no GitHub: https://github.com/GabrielToshioHiga/legendary-octo-guacamole.git
 ==================================================================================
 */
 
